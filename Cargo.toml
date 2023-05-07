@@ -1,0 +1,17 @@
+[package]
+name = "jsyn"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+fundsp = "0.13.0"
+janetrs = { git = "ssh://git@github.com/GrayJack/janetrs.git", version = "0.5.0", features = ["link-system"] }
+# Need "wav" for streaming audio:
+kira = { version = "0.7.3", default-features = false, features = ["cpal", "wav"] }
+once_cell = "1.17.1"
+ringbuf = "0.3.3"
